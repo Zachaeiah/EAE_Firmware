@@ -180,7 +180,7 @@ def simulate(Cz: ctrl.TransferFunction,
         print(f"\nStep info failed: {err}")
 
     # One window, multiple views
-    fig, axs = plt.subplots(4, 1, sharex=True, figsize=(10, 8))
+    fig, axs = plt.subplots(3, 1, sharex=True, figsize=(10, 8))
 
     axs[0].plot(t, r, label="setpoint r")
     axs[0].plot(t, y, label="plant output y")
@@ -197,14 +197,6 @@ def simulate(Cz: ctrl.TransferFunction,
     axs[2].set_ylabel("Error")
     axs[2].grid(True)
     axs[2].legend()
-
-    axs[3].plot(t, r, label="setpoint r")
-    axs[3].plot(t, y, label="plant output y")
-    axs[3].plot(t, u, label="controller output u")
-    axs[3].set_xlabel("Time [s]")
-    axs[3].set_ylabel("All Signals")
-    axs[3].grid(True)
-    axs[3].legend()
 
     fig.suptitle(title)
     plt.tight_layout()
